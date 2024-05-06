@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"apiKurator/services"
-	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
+	"github.com/golang-jwt/jwt/v5"
 	"os"
 )
 
@@ -15,7 +15,7 @@ type UserControllerImpl struct {
 
 func (u *UserControllerImpl) User(c *fiber.Ctx) error {
 	cookie := c.Cookies("jwt")
-	token, err := jwt.ParseWithClaims(cookie, &jwt.StandardClaims{}, func(token *jwt.Token) (interface{}, error) {
+	token, err := jwt.NewParser().ParseWithClaims(cookie, &jwt.RegisteredClaims{}, func(token *jwt.Token) (interface{}, error) {
 		return []byte(SecretKey), nil
 	})
 	if err != nil {
@@ -24,7 +24,7 @@ func (u *UserControllerImpl) User(c *fiber.Ctx) error {
 			"message": "unauthorized",
 		})
 	}
-	claims := token.Claims.(*jwt.StandardClaims)
+	claims := token.Claims.(*jwt.RegisteredClaims)
 	user, err := u.userService.GetUserByID(claims.Issuer)
 	if err != nil {
 		return err

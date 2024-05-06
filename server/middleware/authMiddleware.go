@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
+	"github.com/golang-jwt/jwt/v5"
 	"os"
 )
 
@@ -17,7 +17,7 @@ func AuthMiddleware(c *fiber.Ctx) error {
 		})
 	}
 
-	token, err := jwt.ParseWithClaims(cookie, &jwt.StandardClaims{}, func(token *jwt.Token) (interface{}, error) {
+	token, err := jwt.NewParser().ParseWithClaims(cookie, &jwt.RegisteredClaims{}, func(token *jwt.Token) (interface{}, error) {
 		return []byte(SecretKey), nil
 	})
 	if err != nil {
