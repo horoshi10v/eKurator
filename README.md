@@ -4,6 +4,8 @@
 eKurator is a web application designed for managing and visualizing JSON data. It consists of a React-based frontend client and a Go-based REST API backend server.
 
 ## Overview
+<img src="client/public/img.png" alt="main" title="EkuratorMain" style="margin-right: 10px; width: 40%;"> <img src="client/public/img_1.png" alt="main" title="EkuratorMain" style="margin-right: 10px; width: 40%;">
+<img src="client/public/img_2.png" alt="main" title="EkuratorMain" style="margin-right: 10px; width: 40%;"> <img src="client/public/img_3.png" alt="main" title="EkuratorMain" style="margin-right: 10px; width: 40%;">
 
 The project is divided into two main components:
 
