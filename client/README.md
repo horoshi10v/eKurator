@@ -35,7 +35,7 @@ Before running this application, ensure that you have the following prerequisite
 2. Install the necessary dependencies using npm:
 
    ```bash
-   npm install
+   npm install --force
    ```
 
 3. Start the development server:
