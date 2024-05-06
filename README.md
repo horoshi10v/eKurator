@@ -1,7 +1,7 @@
 
 # <img src="client/public/ic_launcher-web.png" alt="Ekurator Logo" title="Ekurator" style="margin-right: 10px; width: 50px; height: 50px;"> eKurator
 
-eKurator is a web application designed for managing and visualizing JSON data. It consists of a React-based frontend client and a Go-based REST API backend server.
+eKurator is a web application designed for searching and placing forms for joint work on university projects. It consists of a React-based frontend client and a Go-based REST API backend server.
 
 ## Overview
 <img src="client/public/img.png" alt="main" title="EkuratorMain" style="margin-right: 10px; width: 40%;"> <img src="client/public/img_1.png" alt="main" title="EkuratorMain" style="margin-right: 10px; width: 40%;">
