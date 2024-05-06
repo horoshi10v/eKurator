@@ -11,6 +11,7 @@ services:
       - app-network
     depends_on:
       - db
+    restart: always
   client:
     build:
       context: ./client
@@ -21,10 +22,12 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: eKurator
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=eKurator
     volumes:
       - db_data:/var/lib/mysql
+    ports:
+      - 3307:3306
     networks:
       - app-network
 volumes:
