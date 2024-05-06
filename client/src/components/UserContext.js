@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/user', { withCredentials: true });
+                const response = await axios.get('http://127.0.0.1:8080/user', { withCredentials: true });
                 const userData = response.data;
                 setUser({ ...userData, isAuth: true }); // Set isAuth to true
             } catch (error) {

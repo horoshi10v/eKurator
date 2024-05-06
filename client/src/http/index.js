@@ -3,11 +3,11 @@ import {BASE_URL} from "../utils/consts";
 import jwt_decode from "jwt-decode";
 
 const $host = axios.create({
-    baseURL: 'http://localhost:8080/user'
+    baseURL: 'http://127.0.0.1:8080/user'
 })
 
 const $authHost = axios.create({
-    baseURL: 'http://localhost:8080/user'
+    baseURL: 'http://127.0.0.1:8080/user'
 })
 
 const authInterceptor = config =>{

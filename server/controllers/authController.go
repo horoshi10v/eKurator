@@ -10,7 +10,7 @@ type AuthControllerImpl struct {
 }
 
 func (a *AuthControllerImpl) GoogleLogin(c *fiber.Ctx) error {
-	url, err := a.authService.GoogleLogin()
+	url, err := a.authService.GoogleLogin(c)
 	if err != nil {
 		return err
 	}
@@ -24,19 +24,18 @@ func (a *AuthControllerImpl) GoogleLogin(c *fiber.Ctx) error {
 
 func (a *AuthControllerImpl) GoogleLogout(c *fiber.Ctx) error {
 	cookie := a.authService.GoogleLogout()
-	c.Cookie(&cookie)
+	c.Cookie(cookie) // removed the & operator
 	return c.JSON(fiber.Map{
 		"message": "logout success",
 	})
 }
 
 func (a *AuthControllerImpl) GoogleCallback(c *fiber.Ctx) error {
-	state := c.Query("state")
 	code := c.Query("code")
-	redirectUrl, cookie, err := a.authService.GoogleCallback(code, state)
+	redirectUrl, cookie, err := a.authService.GoogleCallback(c, code) // pass c as the first argument
 	if err != nil {
 		return c.SendString(err.Error())
 	}
-	c.Cookie(&cookie)
+	c.Cookie(cookie)
 	return c.Redirect(redirectUrl)
 }

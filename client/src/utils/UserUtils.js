@@ -29,7 +29,7 @@ export default class UserStore{
 
 export const fetchUsers = async (store, role) => {
     try {
-        const response = await fetch(`http://localhost:8080/users?role=${role}`);
+        const response = await fetch(`http://127.0.0.1:8080/users?role=${role}`);
         const data = await response.json();
         store.setUsers(data);
     } catch (error) {

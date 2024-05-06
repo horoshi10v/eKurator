@@ -7,7 +7,7 @@ function Navbar() {
     const location = useLocation();
 
     const handleLogout = () => {
-        fetch('http://localhost:8080/google_logout', { credentials: 'include' })
+        fetch('http://127.0.0.1:8080/google_logout', { credentials: 'include' })
             .then(() => {
                 updateUser(null);
             })
@@ -45,7 +45,7 @@ function Navbar() {
 
                 {!user ? (
                     <div className="ml-auto">
-                        <a href="http://localhost:8080/google_login" className="btn btn-success">
+                        <a href="http://127.0.0.1:8080/google_login" className="btn btn-success">
                             Вхід
                         </a>
                     </div>
