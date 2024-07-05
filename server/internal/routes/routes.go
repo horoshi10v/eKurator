@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"apiKurator/controllers"
-	"apiKurator/middleware"
+	"apiKurator/internal/controllers"
+	"apiKurator/internal/middleware"
 	"github.com/gofiber/fiber/v2"
 )
 

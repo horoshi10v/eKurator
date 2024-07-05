@@ -1,9 +1,9 @@
 package services
 
 import (
-	"apiKurator/config"
-	"apiKurator/database"
-	"apiKurator/models"
+	"apiKurator/internal/config"
+	"apiKurator/internal/database"
+	"apiKurator/internal/models"
 	"context"
 	"encoding/json"
 	"errors"

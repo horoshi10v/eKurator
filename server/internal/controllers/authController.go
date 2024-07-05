@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"apiKurator/services"
+	"apiKurator/internal/services"
 	"github.com/gofiber/fiber/v2"
 )
 

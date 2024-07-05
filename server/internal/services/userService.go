@@ -1,8 +1,8 @@
 package services
 
 import (
-	"apiKurator/database"
-	"apiKurator/models"
+	"apiKurator/internal/database"
+	"apiKurator/internal/models"
 	"github.com/google/uuid"
 )
 
